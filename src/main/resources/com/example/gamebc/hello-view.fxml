@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<VBox alignment="CENTER" prefHeight="500.0" prefWidth="600.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gamebc.HelloController">
+  <padding>
+    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+  </padding>
+   <Pane prefHeight="534.0" prefWidth="613.0" style="-fx-background-color: #AFEEEE;">
+      <children>
+        <Button id="checkNumber" layoutX="23.0" layoutY="137.0" onAction="#check" prefHeight="25.0" prefWidth="132.0" text="Проверить">
+            <font>
+               <Font size="14.0" />
+            </font></Button>
+      
+        <Label fx:id="gameRules" alignment="TOP_LEFT" layoutX="288.0" layoutY="23.0" prefHeight="418.0" prefWidth="262.0" />
+         <CheckBox fx:id="gameRules2" layoutX="319.0" layoutY="4.0" mnemonicParsing="false" onAction="#showGameRules" text="Показать/скрыть правила игры">
+            <font>
+               <Font size="14.0" />
+            </font></CheckBox>
+         <TextField fx:id="attempt" layoutX="14.0" layoutY="99.0" onAction="#isValid">
+            <font>
+               <Font size="14.0" />
+            </font></TextField>
+         <Label layoutX="18.0" layoutY="73.0" text="Игрок, введите число:">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Label>
+         <TableView fx:id="tableAttempt" layoutX="6.0" layoutY="195.0" prefHeight="258.0" prefWidth="262.0">
+           <columns>
+             <TableColumn id="currentAttempt" prefWidth="85.20001602172852" text="Попытка">
+                 <cellValueFactory>
+                     <PropertyValueFactory property="getCurrentAttempt" />
+                 </cellValueFactory>
+             </TableColumn>
+             <TableColumn id="currentBulls" prefWidth="85.19998168945312" text="Быки">
+                 <cellValueFactory>
+                     <PropertyValueFactory property="getCurrentBulls" />
+                 </cellValueFactory>
+             </TableColumn>
+             <TableColumn id="currentCows" prefWidth="90.80000305175781" text="Коровы">
+                 <cellValueFactory>
+                     <PropertyValueFactory property="getCurrentCows" />
+                 </cellValueFactory>
+             </TableColumn>
+           </columns>
+         </TableView>
+         <Label layoutX="14.0" layoutY="175.0" text="Ваши попытки">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+         </Label>
+         <Button id="starGame" layoutX="39.0" layoutY="24.0" mnemonicParsing="false" onAction="#start" text="Начать игру!">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+      </children>
+   </Pane>
+</VBox>
